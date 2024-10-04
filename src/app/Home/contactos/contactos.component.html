@@ -1,0 +1,32 @@
+<h1 class="w-full text-center  p-5 bg-green-100">
+    Listado de contactos
+</h1>
+<div *ngFor="let contacto of contactos.contactos" class="w-full justify-center">
+    <app-card-contactos [contacto]="contacto"></app-card-contactos>
+</div>
+<div *ngIf="!modal" class="w-full flex justify-end bottom-10 right-20 fixed">    
+    <button (click)="flagForModal()" class=" border rounded border-gray-200 bg-blue-300 p-2 ">Agregar Contactos</button>
+</div>
+<div *ngIf="modal" class=" flex p-5 justify-center items-center z-10 fixed top-[10%] left-[35%] bg-[#2c536a]/80 text-white rounded-2xl w-[30%] h-[80%]">
+    <button class="bg-red-700 border  w-10 h-10 rounded-full fixed top-[8%] " (click)="flagForModal()" >x</button>
+    <div class="flex w-full h-full items-center  flex-col">
+        <h1 class="p-2 ">Formulario:</h1>
+        <form (ngSubmit)="agregarContacto()" class="w-full h-5/6 flex flex-col justify-center items-center ">
+
+            <label class="m-5 " for="name">Nombre:
+                <input class="text-black w-full rounded-md p-2" type="text" name="nombre" id="name" #name placeholder="Introduce tu nombre" [(ngModel)]="cont.name">
+            </label>
+
+            <label class="m-5" for="Email">Id unico:
+                <input class="text-black w-full p-2 rounded-md" type="number" name="IDE" id="Id" #id placeholder="Identificador numerido" [(ngModel)]="cont.id">
+            </label>
+
+            <label class="m-5" for="Email">Correo:
+                <input class="text-black w-full p-2 rounded-md" type="text" name="email" id="Email" #email placeholder="Correo electronico" [(ngModel)]="cont.email">
+            </label>
+
+            <button (click)="flagForModal()" class="bg-green-700 p-2 rounded-lg">Guardar</button>
+        </form>
+        
+    </div>
+</div>
