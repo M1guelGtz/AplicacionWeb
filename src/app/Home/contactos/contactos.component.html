@@ -2,7 +2,7 @@
     Listado de contactos
 </h1>
 <div *ngFor="let contacto of contactos.contactos" class="w-full justify-center">
-    <app-card-contactos [contacto]="contacto"></app-card-contactos>
+    <app-card-contactos (cambioElTitulo)="contacto.name = $event " [contacto]="contacto"></app-card-contactos>
 </div>
 <div *ngIf="!modal" class="w-full flex justify-end bottom-10 right-20 fixed">    
     <button (click)="flagForModal()" class=" border rounded border-gray-200 bg-blue-300 p-2 ">Agregar Contactos</button>

@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Contacto } from '../../Interfaces/contacto';
 import { ContactosService } from '../../Services/contactos.service';
-import { isNull } from 'util';
 
 @Component({
   selector: 'app-contactos',
@@ -11,7 +10,7 @@ import { isNull } from 'util';
 export class ContactosComponent {
 
   @Input() cont: Contacto = {
-    id: 1,
+    id: 0,
     name:'',
     email: '',
     id_chat: 0
@@ -25,5 +24,12 @@ export class ContactosComponent {
     this.cont.id = this.contactos.contactos.length + 1
     this.cont.id_chat = this.contactos.contactos.length + 1
     this.contactos.contactos.push(this.cont)
+
+    this.cont = {
+      id: 0,
+      name:'',
+      email: '',
+      id_chat: 0
+    }
   }
 }
