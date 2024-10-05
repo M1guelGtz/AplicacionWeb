@@ -23,6 +23,14 @@ export class ChatComponent {
     }
     enviarMensaje(){
       this.chat.addMensaje(this.msj)
-      this.msj.texto=''
+      
+      this.msj = {
+        hora: "",
+        fecha: "",
+        estatus: false,
+        texto: "",
+        id_mensaje: 1,
+        id_usuario: 233382
+      }
     }
 }
