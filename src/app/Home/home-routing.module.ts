@@ -6,6 +6,7 @@ import { ContactosComponent } from './contactos/contactos.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from '../login/login.component';
+import { RegisterComponent } from '../register/register.component';
 
 const routes: Routes = [
   { path: 'home/chat', 
@@ -24,6 +25,9 @@ const routes: Routes = [
   },{
     path:"login",
     component:LoginComponent
+  },{
+    path:"register",
+    component:RegisterComponent
   },
   {
     path: '',

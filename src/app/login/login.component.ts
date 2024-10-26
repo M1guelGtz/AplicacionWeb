@@ -1,30 +1,39 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../Services/login.service';
 import { LoginData } from '../Interfaces/Login';
-import { log } from 'console';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
-
 export class LoginComponent {
+  loginData: LoginData = {
+    nombre: '',
+    password: '',
+    correo: '',
+    id: ''
+  };
+  errorMessage: string = '';
 
-  loginData:LoginData = {
-    nombre:'',
-    password:'',
-    correo:'',
-    id:'',
+  constructor(public loginService: LoginService) {}
+
+  envioDatos() {
+    const user = this.loginService.getData().find(
+      u => u.correo === this.loginData.correo && u.password === this.loginData.password
+    );
+
+    if (user) {
+      console.log('Inicio de sesión exitoso:', user);
+      this.errorMessage = '';
+      this.resetForm();
+    } else {
+      this.errorMessage = 'Correo o contraseña incorrectos.';
+      console.log(this.errorMessage);
+    }
   }
 
-
-  constructor(public loginService: LoginService ){
-  }
-
-  envioDatos(){
-    this.loginService.addData(this.loginData);
-    console.log('Datos enviados',this.loginData);
+  resetForm() {
     this.loginData = {
       nombre: '',
       password: '',
@@ -32,9 +41,4 @@ export class LoginComponent {
       id: ''
     };
   }
-
-
-
-
-
 }

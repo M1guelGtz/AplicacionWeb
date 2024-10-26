@@ -9,6 +9,7 @@ import { CardContactosComponent } from './card-contactos/card-contactos.componen
 import { ContactosComponent } from './contactos/contactos.component';
 import { ChatComponent } from './chat/chat.component';
 import { LoginComponent } from '../login/login.component';
+import { RegisterComponent } from '../register/register.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginComponent } from '../login/login.component';
     CardContactosComponent,
     ContactosComponent,
     ChatComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
