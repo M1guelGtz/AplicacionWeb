@@ -1,0 +1,12 @@
+
+<div *ngIf="chat.chats.length<=0">
+    no existe ningun chat
+</div>
+
+<div *ngFor="let contacto of contacto.contactos" class="w-full flex flex-col items-center m-4">
+    <div routerLink="chat"  *ngFor="let chat of chat.chats" class=" cursor-alias border my-1 rounded-3xl p-3 w-1/2">
+        <h3 class="text-xl">{{contacto.name}}</h3>
+        <p *ngIf="contacto.id_chat == chat.id_chat">{{chat.ultimo}} </p>
+    </div>
+</div>
+
