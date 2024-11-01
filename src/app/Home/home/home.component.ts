@@ -8,5 +8,6 @@ import { Chat } from '../../Interfaces/chat';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  constructor(public chat: ChatsService, public contacto: ContactosService){}
+  constructor(public chat: ChatsService, public contacto: ContactosService){
+  }
 }

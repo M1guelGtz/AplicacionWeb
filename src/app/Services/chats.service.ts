@@ -14,6 +14,10 @@ export class ChatsService {
   ]
   chats : Chat[] = [
     {id_chat: 1, ultimo: "Hola como estas?", recientes: [], id_mensajes: 1, id_contacto: 233382},
+    {id_chat: 2, ultimo: "Que dia?", recientes: [], id_mensajes: 1, id_contacto: 233382},
+    {id_chat: 3, ultimo: "", recientes: [], id_mensajes: 1, id_contacto: 233382},
+
+
   ]
 
   addMensaje(mensaje: Mensaje){

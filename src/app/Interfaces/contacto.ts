@@ -1,6 +1,6 @@
 export interface Contacto {
-    id: number
+    id: any
     name:string
     email: string
-    id_chat: number
+    id_chat: any
 }
